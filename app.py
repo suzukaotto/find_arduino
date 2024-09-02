@@ -6,9 +6,11 @@ def find_arduino_port():
     
     arduino_port = None
     
-    for port in ports:
+    for index, port in enumerate(ports):
         port_name = port.device
         description = port.description.lower()
+        
+        print(f"{index}. {port_name}: {description}")
         
         if "arduino" in description:
             arduino_port = port_name
